@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Luôn tóm tắt lại ngữ cảnh hiểu biết hiện tại của model AI (1 cách ngắn gọn nhất có thể để tiết kiệm context window) - Prefer tìm đọc các files / folders liên quan nếu ngữ cảnh quá đơn giản, dễ gây phiến diện, sai sót
+- Luôn đưa ra đề xuất cải thiện (nếu có) sau mỗi câu hỏi
+- Luôn tự phản biện lại câu hỏi của người hỏi để đảm bảo không thực thi các yêu cầu cực kì ngớ ngẩn và vô lý và lặp đi lặp lại các hành động ngớ ngẩn đó
+- Không over-engineering nếu không có yêu cầu nào cụ thể về điều đó
+- Câu trả lời không nên quá dài dòng (trừ khi có yêu cầu cụ thể về sự dài dòng đó - chế độ explainatory)

@@ -1,0 +1,119 @@
+# =============================================
+# .cursorignore - Best Practices for Node.js/TS
+# =============================================
+
+# ----------------------------
+# Dependency & Build Artifacts
+# ----------------------------
+**/node_modules/  # Primary dependency directory
+**/dist/          # Compiled output (TS -> JS)
+**/build/         # Common build directory
+**/out/           # Alternative build output
+**/coverage/      # Test coverage reports
+**/.next/         # Next.js build output
+**/.nuxt/         # Nuxt.js build output
+**/.svelte-kit/   # SvelteKit build output
+
+# ----------------------
+# Testing & CI Artifacts
+# ----------------------
+**/test-results/  # Jest/Vitest test outputs
+**/__snapshots__/ # Test snapshots
+**/cypress/screenshots/ # E2E test screenshots
+**/cypress/videos/     # E2E test recordings
+**/jest-report.html    # Test reports
+**/lcov.info           # Coverage data
+
+# -----------------------
+# Runtime & Environment
+# -----------------------
+.env*.local       # Local environment variables
+.env*.development # Dev environment configs
+.env*.production  # Prod environment configs
+.env*.test        # Test environment configs
+*.local.*         # Local development files
+.dockerignore     # Docker-specific ignores
+.dccache          # Development cache
+
+# ----------------------
+# Logs & Temporary Files
+# ----------------------
+*.log             # Application logs
+*.log.*           # Rotated logs
+*.tmp             # Temporary files
+*.temp            # Temporary files
+**/tmp/**         # Temporary directories
+npm-debug.log*    # NPM debug logs
+yarn-debug.log*   # Yarn debug logs
+yarn-error.log*   # Yarn error logs
+pnpm-debug.log*   # PNPM debug logs
+*.pid             # Process ID files
+
+# ---------------------
+# Editor & IDE Settings
+# ---------------------
+.idea/            # JetBrains IDEs
+.vscode/          # VS Code (except extensions.json)
+.vscode/extensions.json # KEEP this file for recommended extensions
+*.code-workspace  # VS Code workspace files
+.history/         # VS Code file history
+
+# ---------------------
+# OS & Tooling Artifacts
+# ---------------------
+.DS_Store         # macOS folder attributes
+Thumbs.db         # Windows thumbnail cache
+desktop.ini       # Windows folder config
+*.swp             # Vim swap files
+*~                # Backup files
+*.bak             # Backup files
+
+# ----------------------
+# Package Manager Files
+# ----------------------
+package-lock.json # NPM lockfile (use pnpm/yarn)
+yarn.lock         # Yarn lockfile (if using)
+pnpm-lock.yaml    # PNPM lockfile (if using)
+
+# ----------------------
+# Documentation & Assets
+# ----------------------
+**/docs/_build/   # Built documentation
+**/public/assets/ # Compiled assets
+**/static/        # Static files (often processed)
+**/*.mdx          # MDX files (if not source code)
+**/*.pdf          # PDF documents
+**/*.png          # Image files
+**/*.jpg
+**/*.gif
+**/*.ico
+
+# ----------------------
+# Security Sensitive Files
+# ----------------------
+**/secrets/       # Secret management
+**/keys/          # Encryption keys
+**/certificates/  # SSL certificates
+**/jwt.key        # JWT private keys
+**/id_rsa         # SSH private keys
+
+# ----------------------
+# Project-Specific Ignores
+# ----------------------
+# Add below this line for project-specific exclusions
+# Example: !src/**/*.test.ts  # KEEP test files
+
+# Angular
+**/angular/
+
+# React Native
+android/
+ios/
+
+!**/fixtures/**/*.json   # Keep test fixtures
+
+# TurboRepo
+.turbo/
+
+# Lerna
+lerna-debug.log
