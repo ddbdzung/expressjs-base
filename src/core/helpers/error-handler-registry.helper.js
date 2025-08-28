@@ -120,18 +120,18 @@ export function registerErrorHandler(ExceptionClass, handler) {
  * @returns {Function|null} - Handler function or null if not found
  */
 export function findErrorHandler(err) {
-  // Check for exact match first
-  for (const [ExceptionClass, handler] of errorHandlerRegistry) {
-    if (err.constructor === ExceptionClass) {
-      return handler;
-    }
+  let handler = errorHandlerRegistry.get(err.constructor);
+  if (handler) {
+    return handler;
   }
 
-  // Check inheritance chain
-  for (const [ExceptionClass, handler] of errorHandlerRegistry) {
-    if (err instanceof ExceptionClass) {
+  let proto = Object.getPrototypeOf(err);
+  while (proto && proto !== Object.prototype) {
+    handler = errorHandlerRegistry.get(proto.constructor);
+    if (handler) {
       return handler;
     }
+    proto = Object.getPrototypeOf(proto);
   }
 
   return null;
